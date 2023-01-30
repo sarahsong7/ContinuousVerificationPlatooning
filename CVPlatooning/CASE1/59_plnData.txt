@@ -1,0 +1,96 @@
+configName      CASE59
+iniFile         omnet_CASE1.ini
+processID       10206
+runID           CASE59-0-20220322-16:14:07-10206
+totalRun        1
+currentRun      0
+currentConfig   CASE59
+sim timeStep    100 ms
+startDateTime   2022-03-22 16:14:07.387
+endDateTime     2022-03-22 16:14:13.387
+duration        0 hour, 0 minute, 5 second
+
+
+timeStep    vehId          fromState                     toState                       commandSent    receiverId     senderPltId    receiverPltId    maneuverStartEnd 
+
+
+0.00        veh            state_idle                    state_platoonLeader           -              -              -              -                -                
+
+0.00        veh.1          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh.2          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1           state_idle                    state_platoonLeader           -              -              -              -                -                
+
+0.00        veh1.1         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.2         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+25.00       veh1           state_platoonLeader           state_sendSplitReq            -              -              -              -                -                
+25.00       veh1           state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh1.2         veh1           veh1             -                
+
+25.06       veh1.2         state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh1           veh1           veh1             -                
+
+25.10       veh1           state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+25.10       veh1           state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh1.2         veh1           veh1             -                
+
+25.11       veh1.2         state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+25.11       veh1.2         state_sendingACK              state_waitForSplitDone        ACK            veh1           veh1.2         veh1.2           -                
+
+25.12       veh1           state_waitForAck              state_splitDone               -              -              -              -                -                
+25.12       veh1           state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh1           veh1             -                
+25.12       veh1           state_splitDone               state_platoonLeader           SPLIT_DONE     veh1.2         veh1           veh1             -                
+
+25.19       veh1.2         state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+28.89       veh1.2         state_waitForGap              state_platoonLeader           GAP_CREATED    veh1           veh1.2         veh1             Split_End        
+
+45.00       veh1           state_platoonLeader           state_sendSplitReq            -              -              -              -                -                
+45.00       veh1           state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh1.1         veh1           veh1             -                
+
+45.06       veh1.1         state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh1           veh1           veh1             -                
+
+45.10       veh1           state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+45.10       veh1           state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh1.1         veh1           veh1             -                
+
+45.15       veh1.1         state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+45.15       veh1.1         state_sendingACK              state_waitForSplitDone        ACK            veh1           veh1.1         veh1.1           -                
+
+45.24       veh1           state_waitForAck              state_splitDone               -              -              -              -                -                
+45.24       veh1           state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh1           veh1             -                
+45.24       veh1           state_splitDone               state_platoonLeader           SPLIT_DONE     veh1.1         veh1           veh1             -                
+
+45.34       veh1.1         state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+49.04       veh1.1         state_waitForGap              state_platoonLeader           GAP_CREATED    veh1           veh1.1         veh1             Split_End        
+
+85.00       veh            state_platoonLeader           state_sendVoteLeader          -              -              -              -                -                
+85.00       veh            state_sendVoteLeader          state_waitForVoteReply        VOTE_LEADER    multicast      veh            veh              LLeave_Start     
+
+85.08       veh.1          state_platoonFollower         state_platoonFollower         ELECTED_LEADER veh            veh            veh              -                
+
+85.13       veh            state_waitForVoteReply        state_sendSplitReq            -              -              -              -                -                
+85.13       veh            state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh.1          veh            veh              -                
+
+85.16       veh.1          state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh            veh            veh              -                
+
+85.17       veh            state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+85.17       veh            state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh.1          veh            veh              -                
+
+85.18       veh.1          state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+85.18       veh.1          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.1          veh.1            -                
+
+85.21       veh            state_waitForAck              state_changePL                -              -              -              -                -                
+85.21       veh            state_changePL                state_waitForAllAcks2         CHANGE_PL      veh.2          veh            veh              -                
+
+85.29       veh.2          state_platoonFollower         state_platoonFollower         ACK            veh            veh.1          veh              -                
+
+85.38       veh            state_waitForAllAcks2         state_splitDone               -              -              -              -                -                
+85.38       veh            state_splitDone               state_splitCompleted          CHANGE_Tg      multicast      veh            veh              -                
+85.38       veh            state_splitDone               state_splitCompleted          SPLIT_DONE     veh.1          veh            veh              -                
+
+85.43       veh.1          state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+89.13       veh.1          state_waitForGap              state_platoonLeader           GAP_CREATED    veh            veh.1          veh              Split_End        
+
+89.19       veh            state_splitCompleted          state_idle                    -              -              -              -                LLeave_End       
