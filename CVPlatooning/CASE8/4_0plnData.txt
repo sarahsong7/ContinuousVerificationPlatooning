@@ -1,0 +1,188 @@
+configName      CASE4
+iniFile         omnet_CASE8.ini
+processID       9796
+runID           CASE4-0-20220325-13:15:56-9796
+totalRun        1
+currentRun      0
+currentConfig   CASE4
+sim timeStep    100 ms
+startDateTime   2022-03-25 13:15:56.088
+endDateTime     2022-03-25 13:16:08.088
+duration        0 hour, 0 minute, 12 second
+
+
+timeStep    vehId          fromState                     toState                       commandSent    receiverId     senderPltId    receiverPltId    maneuverStartEnd 
+
+
+0.00        veh            state_idle                    state_platoonLeader           -              -              -              -                -                
+
+0.00        veh.1          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh.2          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh.3          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh.4          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1           state_idle                    state_platoonLeader           -              -              -              -                -                
+
+0.00        veh1.1         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.2         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.3         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.4         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.5         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.6         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh            state_platoonLeader           state_sendSplitReq            -              -              -              -                -                
+0.00        veh            state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh.4          veh            veh              -                
+
+0.00        veh1           state_platoonLeader           state_sendSplitReq            -              -              -              -                -                
+0.00        veh1           state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh1.4         veh1           veh1             -                
+
+0.02        veh.4          state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh            veh            veh              -                
+
+0.06        veh1.4         state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh1           veh1           veh1             -                
+
+0.09        veh            state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+0.09        veh            state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh.4          veh            veh              -                
+
+0.10        veh1           state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+0.10        veh1           state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh1.4         veh1           veh1             -                
+
+0.18        veh1.4         state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+0.18        veh1.4         state_sendingACK              state_waitForSplitDone        ACK            veh1           veh1.4         veh1.4           -                
+
+0.19        veh.4          state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+0.19        veh.4          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.4          veh.4            -                
+
+0.24        veh1           state_waitForAck              state_changePL                -              -              -              -                -                
+0.24        veh1           state_changePL                state_waitForAllAcks2         CHANGE_PL      veh1.5         veh1           veh1             -                
+0.24        veh1           state_changePL                state_waitForAllAcks2         CHANGE_PL      veh1.6         veh1           veh1             -                
+
+0.24        veh            state_waitForAck              state_splitDone               -              -              -              -                -                
+0.24        veh            state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh            veh              -                
+0.24        veh            state_splitDone               state_platoonLeader           SPLIT_DONE     veh.4          veh            veh              -                
+
+0.25        veh1.6         state_platoonFollower         state_platoonFollower         ACK            veh1           veh1.4         veh1             -                
+
+0.26        veh.4          state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+0.29        veh1.5         state_platoonFollower         state_platoonFollower         ACK            veh1           veh1.4         veh1             -                
+
+0.36        veh1           state_waitForAllAcks2         state_splitDone               -              -              -              -                -                
+0.36        veh1           state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh1           veh1             -                
+0.36        veh1           state_splitDone               state_platoonLeader           SPLIT_DONE     veh1.4         veh1           veh1             -                
+
+0.42        veh1.4         state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+0.82        veh1.4         state_waitForGap              state_platoonLeader           GAP_CREATED    veh1           veh1.4         veh1             Split_End        
+
+0.86        veh.4          state_waitForGap              state_platoonLeader           GAP_CREATED    veh            veh.4          veh              Split_End        
+
+25.00       veh            state_platoonLeader           state_sendVoteLeader          -              -              -              -                -                
+25.00       veh            state_sendVoteLeader          state_waitForVoteReply        VOTE_LEADER    multicast      veh            veh              LLeave_Start     
+
+25.02       veh.1          state_platoonFollower         state_platoonFollower         ELECTED_LEADER veh            veh            veh              -                
+
+25.06       veh            state_waitForVoteReply        state_sendSplitReq            -              -              -              -                -                
+25.06       veh            state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh.1          veh            veh              -                
+
+25.10       veh.1          state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh            veh            veh              -                
+
+25.14       veh            state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+25.14       veh            state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh.1          veh            veh              -                
+
+25.22       veh.1          state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+25.22       veh.1          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.1          veh.1            -                
+
+25.29       veh            state_waitForAck              state_changePL                -              -              -              -                -                
+25.29       veh            state_changePL                state_waitForAllAcks2         CHANGE_PL      veh.2          veh            veh              -                
+25.29       veh            state_changePL                state_waitForAllAcks2         CHANGE_PL      veh.3          veh            veh              -                
+
+25.35       veh.3          state_platoonFollower         state_platoonFollower         ACK            veh            veh.1          veh              -                
+
+25.36       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+25.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.1          veh.4          veh.1            Merge_Request    
+
+25.37       veh.2          state_platoonFollower         state_platoonFollower         ACK            veh            veh.1          veh              -                
+
+25.45       veh            state_waitForAllAcks2         state_splitDone               -              -              -              -                -                
+25.45       veh            state_splitDone               state_splitCompleted          CHANGE_Tg      multicast      veh            veh              -                
+25.45       veh            state_splitDone               state_splitCompleted          SPLIT_DONE     veh.1          veh            veh              -                
+
+25.46       veh.1          state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+26.36       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+26.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.1          veh.4          veh.1            Merge_Request    
+
+27.36       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+27.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.1          veh.4          veh.1            Merge_Request    
+
+28.36       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                -                
+
+28.36       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+28.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.1          veh.4          veh.1            Merge_Request    
+
+29.16       veh.1          state_waitForGap              state_platoonLeader           GAP_CREATED    veh            veh.1          veh              Split_End        
+
+29.16       veh.1          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+29.16       veh.1          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh            veh.1          veh              Merge_Request    
+
+29.19       veh            state_splitCompleted          state_idle                    -              -              -              -                LLeave_End       
+
+29.36       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+29.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.1          veh.4          veh.1            Merge_Request    
+
+30.16       veh.1          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+30.16       veh.1          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh            veh.1          veh              Merge_Request    
+
+30.36       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+30.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.1          veh.4          veh.1            Merge_Request    
+
+31.16       veh.1          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+31.16       veh.1          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh            veh.1          veh              Merge_Request    
+
+31.36       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                -                
+
+31.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+31.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.1          veh.4          veh.1            Merge_Request    
+
+32.16       veh.1          state_waitForMergeReply       state_platoonLeader           -              -              -              -                -                
+
+32.26       veh.1          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+32.26       veh.1          state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+32.36       veh.1          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+32.36       veh.1          state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+32.46       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+32.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.1          veh.4          veh.1            Merge_Request    
+
+32.46       veh.1          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+32.46       veh.1          state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+32.46       veh.1          state_platoonLeader           state_sendMergeAccept         -              -              -              -                -                
+32.46       veh.1          state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh.4          veh.1          veh.4            -                
+
+32.49       veh.4          state_waitForMergeReply       state_mergeAccepted           -              -              -              -                Merge_Start      
+32.49       veh.4          state_mergeAccepted           state_waitForCatchup          -              -              -              -                -                
+
+37.46       veh.1          state_waitForMergeDone        state_sendMergeAccept         -              -              -              -                -                
+37.46       veh.1          state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh.4          veh.1          veh.4            -                
+
+42.46       veh.1          state_waitForMergeDone        state_sendMergeAccept         -              -              -              -                -                
+42.46       veh.1          state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh.4          veh.1          veh.4            -                
+
+47.46       veh.1          state_waitForMergeDone        state_sendMergeAccept         -              -              -              -                -                
+47.46       veh.1          state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh.4          veh.1          veh.4            -                
+
+48.79       veh.4          state_waitForCatchup          state_sendMergeDone           -              -              -              -                -                
+48.79       veh.4          state_sendMergeDone           state_platoonFollower         MERGE_DONE     veh.1          veh.1          veh.1            Merge_End        
+
+48.88       veh.1          state_waitForMergeDone        state_mergeDone               -              -              -              -                -                
+48.88       veh.1          state_mergeDone               state_platoonLeader           -              -              -              -                -                
