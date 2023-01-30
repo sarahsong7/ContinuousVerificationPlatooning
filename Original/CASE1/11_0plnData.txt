@@ -1,0 +1,961 @@
+configName      CASE11
+iniFile         omnet_CASE1.ini
+processID       1379
+runID           CASE11-0-20220324-16:12:35-1379
+totalRun        1
+currentRun      0
+currentConfig   CASE11
+sim timeStep    100 ms
+startDateTime   2022-03-24 16:12:35.138
+endDateTime     2022-03-24 16:12:43.138
+duration        0 hour, 0 minute, 8 second
+
+
+timeStep    vehId          fromState                     toState                       commandSent    receiverId     senderPltId    receiverPltId    maneuverStartEnd 
+
+
+0.00        veh            state_idle                    state_platoonLeader           -              -              -              -                -                
+
+0.00        veh.1          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh.2          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1           state_idle                    state_platoonLeader           -              -              -              -                -                
+
+0.00        veh1.1         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.2         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.3         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.4         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.5         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1           state_platoonLeader           state_sendSplitReq            -              -              -              -                -                
+0.00        veh1           state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh1.4         veh1           veh1             -                
+
+0.06        veh1.4         state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh1           veh1           veh1             -                
+
+0.09        veh1           state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+0.09        veh1           state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh1.4         veh1           veh1             -                
+
+0.16        veh1.4         state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+0.16        veh1.4         state_sendingACK              state_waitForSplitDone        ACK            veh1           veh1.4         veh1.4           -                
+
+0.17        veh1           state_waitForAck              state_changePL                -              -              -              -                -                
+0.17        veh1           state_changePL                state_waitForAllAcks2         CHANGE_PL      veh1.5         veh1           veh1             -                
+
+0.18        veh1.5         state_platoonFollower         state_platoonFollower         ACK            veh1           veh1.4         veh1             -                
+
+0.23        veh1           state_waitForAllAcks2         state_splitDone               -              -              -              -                -                
+0.23        veh1           state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh1           veh1             -                
+0.23        veh1           state_splitDone               state_platoonLeader           SPLIT_DONE     veh1.4         veh1           veh1             -                
+
+0.28        veh1.4         state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+0.88        veh1.4         state_waitForGap              state_platoonLeader           GAP_CREATED    veh1           veh1.4         veh1             Split_End        
+
+45.00       veh1.4         state_platoonLeader           state_sendSplitReq            -              -              -              -                -                
+45.00       veh1.4         state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh1.5         veh1.4         veh1.4           -                
+
+45.08       veh1.5         state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh1.4         veh1.4         veh1.4           -                
+
+45.11       veh1.4         state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+45.11       veh1.4         state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh1.5         veh1.4         veh1.4           -                
+
+45.14       veh1.5         state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+45.14       veh1.5         state_sendingACK              state_waitForSplitDone        ACK            veh1.4         veh1.5         veh1.5           -                
+
+45.18       veh1.4         state_waitForAck              state_splitDone               -              -              -              -                -                
+45.18       veh1.4         state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh1.4         veh1.4           -                
+45.18       veh1.4         state_splitDone               state_platoonLeader           SPLIT_DONE     veh1.5         veh1.4         veh1.4           -                
+
+45.26       veh1.5         state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+48.96       veh1.5         state_waitForGap              state_platoonLeader           GAP_CREATED    veh1.4         veh1.5         veh1.4           Split_End        
+
+65.05       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+65.05       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+65.09       veh1.4         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+65.09       veh1.4         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1           veh1.4         veh1             Merge_Request    
+
+65.13       veh1           state_platoonLeader           state_sendMergeAccept         -              -              -              -                -                
+65.13       veh1           state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh1.4         veh1           veh1.4           -                
+
+65.15       veh1.4         state_waitForMergeReply       state_mergeAccepted           -              -              -              -                Merge_Start      
+65.15       veh1.4         state_mergeAccepted           state_waitForCatchup          -              -              -              -                -                
+
+66.05       veh1.5         state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+66.05       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+66.09       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+66.10       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+66.15       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+66.15       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+66.18       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+66.21       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+66.25       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+66.25       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+66.32       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+66.32       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+66.35       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+66.35       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+66.36       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+66.42       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+66.45       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+66.45       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+66.54       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+66.55       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+66.65       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+66.65       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+66.73       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+66.78       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+66.85       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+66.85       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+66.89       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+66.94       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+66.95       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+66.95       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+66.97       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+66.99       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+67.05       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+67.05       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+67.07       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+67.15       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+67.25       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+67.25       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+67.33       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+67.40       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+67.45       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+67.45       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+67.49       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+67.53       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+67.55       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+67.55       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+67.58       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+67.60       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+67.65       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+67.65       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+67.66       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+67.74       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+67.75       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+67.75       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+67.84       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+67.93       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+67.95       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+67.95       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+68.03       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+68.12       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+68.15       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+68.15       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+68.16       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+68.16       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+68.25       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+68.25       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+68.29       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+68.38       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+68.45       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+68.45       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+68.54       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+68.64       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+68.65       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+68.65       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+68.66       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+68.76       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+68.85       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+68.85       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+68.87       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+68.90       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+68.95       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+68.95       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+69.04       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+69.12       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+69.15       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+69.15       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+69.21       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+69.28       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+69.35       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+69.35       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+69.36       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+69.40       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+69.45       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+69.45       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+69.48       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+69.53       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+69.55       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+69.55       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+69.64       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+69.73       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+69.75       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+69.75       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+69.78       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+69.80       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+69.85       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+69.85       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+69.94       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+70.03       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+70.05       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+70.05       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+70.05       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+70.11       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+70.13       veh1           state_waitForMergeDone        state_sendMergeAccept         -              -              -              -                -                
+70.13       veh1           state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh1.4         veh1           veh1.4           -                
+
+70.15       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+70.15       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+70.15       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+70.20       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+70.25       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+70.25       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+70.27       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+70.36       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+70.45       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+70.45       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+70.48       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+70.49       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+70.55       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+70.55       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+70.55       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+70.64       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+70.65       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+70.65       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+70.70       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+70.71       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+70.75       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+70.75       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+70.84       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+70.87       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+70.95       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+70.95       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+70.97       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+71.04       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+71.05       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+71.05       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+71.14       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+71.22       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+71.25       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+71.25       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+71.29       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+71.37       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+71.45       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+71.45       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+71.45       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+71.54       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+71.55       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+71.55       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+71.64       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+71.66       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+71.75       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+71.75       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+71.83       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+71.84       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+71.85       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+71.85       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+71.92       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+72.00       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+72.05       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+72.05       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+72.09       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+72.14       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+72.15       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+72.15       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+72.20       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+72.29       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+72.35       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+72.35       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+72.41       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+72.42       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+72.45       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+72.45       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+72.45       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+72.54       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+72.55       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+72.55       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+72.60       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+72.69       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+72.75       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+72.75       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+72.77       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+72.83       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+72.85       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+72.85       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+72.91       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+73.00       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+73.05       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+73.05       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+73.07       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+73.09       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+73.15       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+73.15       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+73.22       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+73.31       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+73.35       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+73.35       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+73.44       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+73.50       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+73.55       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+73.55       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+73.57       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+73.57       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+73.65       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+73.65       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+73.72       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+73.75       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+73.85       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+73.85       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+73.86       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+73.90       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+73.95       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+73.95       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+74.04       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+74.09       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+74.15       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+74.15       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+74.16       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+74.20       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+74.25       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+74.25       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+74.29       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+74.33       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+74.35       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+74.35       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+74.41       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+74.41       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+74.45       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+74.45       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+74.51       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+74.54       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+74.55       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+74.55       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+74.64       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+74.66       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+74.75       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+74.75       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+74.80       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+74.85       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+74.95       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+74.95       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+74.99       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+75.06       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+75.13       veh1           state_waitForMergeDone        state_sendMergeAccept         -              -              -              -                -                
+75.13       veh1           state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh1.4         veh1           veh1.4           -                
+
+75.15       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+75.15       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+75.23       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+75.32       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+75.35       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+75.35       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+75.37       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+75.40       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+75.45       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+75.45       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+75.51       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+75.54       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+75.55       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+75.55       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+75.65       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+75.72       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+75.75       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+75.75       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+75.79       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+75.81       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+75.85       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+75.85       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+75.89       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+75.96       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+76.05       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+76.05       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+76.14       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+76.22       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+76.25       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+76.25       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+76.27       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+76.36       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+76.45       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+76.45       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+76.48       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+76.57       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+76.65       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+76.65       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+76.69       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+76.70       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+76.75       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+76.75       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+76.76       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+76.77       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+76.85       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+76.85       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+76.88       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+76.93       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+76.95       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+76.95       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.4         veh1.5         veh1.4           Merge_Request    
+
+76.99       veh1.4         state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh1.5         veh1.4         veh1.5           -                
+
+77.05       veh1.4         state_waitForCatchup          state_sendMergeDone           -              -              -              -                -                
+77.05       veh1.4         state_sendMergeDone           state_platoonFollower         MERGE_DONE     veh1           veh1           veh1             Merge_End        
+
+77.06       veh1.5         state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+77.14       veh1           state_waitForMergeDone        state_mergeDone               -              -              -              -                -                
+77.14       veh1           state_mergeDone               state_platoonLeader           -              -              -              -                -                
+
+77.15       veh1.5         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+77.15       veh1.5         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1           veh1.5         veh1             Merge_Request    
+
+77.17       veh1           state_platoonLeader           state_sendMergeAccept         -              -              -              -                -                
+77.17       veh1           state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh1.5         veh1           veh1.5           -                
+
+77.25       veh1.5         state_waitForMergeReply       state_mergeAccepted           -              -              -              -                Merge_Start      
+77.25       veh1.5         state_mergeAccepted           state_waitForCatchup          -              -              -              -                -                
+
+82.17       veh1           state_waitForMergeDone        state_sendMergeAccept         -              -              -              -                -                
+82.17       veh1           state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh1.5         veh1           veh1.5           -                
+
+87.17       veh1           state_waitForMergeDone        state_sendMergeAccept         -              -              -              -                -                
+87.17       veh1           state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh1.5         veh1           veh1.5           -                
+
+89.56       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+89.56       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+89.66       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+89.66       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+89.75       veh1.5         state_waitForCatchup          state_sendMergeDone           -              -              -              -                -                
+89.75       veh1.5         state_sendMergeDone           state_platoonFollower         MERGE_DONE     veh1           veh1           veh1             Merge_End        
+
+89.76       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+89.76       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+89.82       veh1           state_waitForMergeDone        state_mergeDone               -              -              -              -                -                
+89.82       veh1           state_mergeDone               state_platoonLeader           CHANGE_Tg      multicast      veh1           veh1             -                
+
+89.86       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+89.86       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+89.96       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+89.96       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+90.06       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+90.06       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+90.16       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+90.16       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+90.26       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+90.26       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+90.36       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+90.36       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+90.46       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+90.46       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+90.56       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+90.56       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+90.66       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+90.66       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+90.76       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+90.76       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+90.86       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+90.86       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+90.96       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+90.96       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+91.06       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+91.06       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+91.16       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+91.16       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+91.26       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+91.26       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+91.36       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+91.36       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+91.46       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+91.46       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+91.56       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+91.56       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+91.66       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+91.66       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+91.76       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+91.76       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+91.86       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+91.86       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+91.96       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+91.96       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+92.06       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+92.06       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+92.16       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+92.16       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+92.26       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+92.26       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+92.36       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+92.36       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+92.46       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+92.46       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+92.56       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+92.56       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+92.66       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+92.66       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+92.76       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+92.76       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+92.86       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+92.86       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+92.96       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+92.96       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+93.06       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+93.06       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+93.16       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+93.16       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+93.26       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+93.26       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+93.36       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+93.36       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+93.46       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+93.46       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+93.56       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+93.56       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+93.66       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+93.66       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+93.76       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+93.76       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+93.86       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+93.86       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+93.96       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+93.96       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+94.06       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+94.06       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+94.16       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+94.16       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+94.26       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+94.26       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+94.36       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+94.36       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+94.46       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+94.46       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+94.56       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+94.56       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+94.66       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+94.66       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+94.76       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+94.76       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+94.86       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+94.86       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+94.96       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+94.96       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+95.06       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+95.06       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+95.16       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+95.16       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+95.26       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+95.26       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+95.36       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+95.36       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+95.46       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+95.46       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+95.56       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+95.56       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+95.66       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+95.66       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+95.76       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+95.76       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+95.86       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+95.86       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+95.96       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+95.96       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+96.06       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+96.06       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+96.16       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+96.16       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+96.26       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+96.26       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+96.36       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+96.36       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+96.46       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+96.46       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+96.56       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+96.56       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+96.66       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+96.66       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+96.76       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+96.76       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+96.86       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+96.86       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+96.96       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+96.96       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+97.06       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+97.06       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+97.16       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+97.16       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+97.26       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+97.26       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+97.36       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+97.36       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+97.46       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+97.46       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+97.56       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+97.56       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+97.66       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+97.66       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+97.76       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+97.76       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+97.86       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+97.86       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+97.96       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+97.96       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+98.06       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+98.06       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+98.16       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+98.16       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+98.26       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+98.26       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+98.36       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+98.36       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+98.46       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+98.46       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+98.56       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+98.56       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+98.66       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+98.66       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+98.76       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+98.76       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+98.86       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+98.86       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+98.96       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+98.96       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+99.06       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+99.06       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+99.16       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+99.16       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+99.26       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+99.26       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+99.36       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+99.36       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+99.46       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+99.46       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+99.56       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+99.56       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+99.66       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+99.66       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+99.76       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+99.76       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+99.86       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+99.86       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+99.96       veh            state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+99.96       veh            state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
