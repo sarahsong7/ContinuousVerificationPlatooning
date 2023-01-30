@@ -1,0 +1,1116 @@
+configName      CASE5
+iniFile         omnet_CASE9.ini
+processID       10237
+runID           CASE5-0-20220325-13:22:46-10237
+totalRun        1
+currentRun      0
+currentConfig   CASE5
+sim timeStep    100 ms
+startDateTime   2022-03-25 13:22:46.690
+endDateTime     2022-03-25 13:22:56.690
+duration        0 hour, 0 minute, 9 second
+
+
+timeStep    vehId          fromState                     toState                       commandSent    receiverId     senderPltId    receiverPltId    maneuverStartEnd 
+
+
+0.00        veh            state_idle                    state_platoonLeader           -              -              -              -                -                
+
+0.00        veh.1          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh.2          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh.3          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh.4          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1           state_idle                    state_platoonLeader           -              -              -              -                -                
+
+0.00        veh1.1         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.2         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.3         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.4         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh            state_platoonLeader           state_sendSplitReq            -              -              -              -                -                
+0.00        veh            state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh.4          veh            veh              -                
+
+0.00        veh1           state_platoonLeader           state_sendSplitReq            -              -              -              -                -                
+0.00        veh1           state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh1.4         veh1           veh1             -                
+
+0.05        veh1.4         state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh1           veh1           veh1             -                
+
+0.08        veh.4          state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh            veh            veh              -                
+
+0.12        veh1           state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+0.12        veh1           state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh1.4         veh1           veh1             -                
+
+0.15        veh            state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+0.15        veh            state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh.4          veh            veh              -                
+
+0.17        veh1.4         state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+0.17        veh1.4         state_sendingACK              state_waitForSplitDone        ACK            veh1           veh1.4         veh1.4           -                
+
+0.17        veh1           state_waitForAck              state_splitDone               -              -              -              -                -                
+0.17        veh1           state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh1           veh1             -                
+0.17        veh1           state_splitDone               state_platoonLeader           SPLIT_DONE     veh1.4         veh1           veh1             -                
+
+0.17        veh.4          state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+0.17        veh.4          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.4          veh.4            -                
+
+0.19        veh1.4         state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+0.25        veh            state_waitForAck              state_splitDone               -              -              -              -                -                
+0.25        veh            state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh            veh              -                
+0.25        veh            state_splitDone               state_platoonLeader           SPLIT_DONE     veh.4          veh            veh              -                
+
+0.29        veh1.4         state_waitForGap              state_platoonLeader           GAP_CREATED    veh1           veh1.4         veh1             Split_End        
+
+0.33        veh.4          state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+0.73        veh.4          state_waitForGap              state_platoonLeader           GAP_CREATED    veh            veh.4          veh              Split_End        
+
+25.00       veh.1          state_platoonFollower         state_sendLeaveReq            -              -              -              -                -                
+25.00       veh.1          state_sendLeaveReq            state_waitForLeaveReply       LEAVE_REQ      veh            veh            veh              FLeave_Request   
+
+25.07       veh            state_platoonLeader           state_sendSplitReq            LEAVE_ACCEPT   veh.1          veh            veh              -                
+25.07       veh            state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh.2          veh            veh              -                
+
+25.08       veh.2          state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh            veh            veh              -                
+
+25.16       veh.1          state_waitForLeaveReply       state_platoonFollower         -              -              -              -                MFLeave_Start    
+
+25.16       veh            state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+25.16       veh            state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh.2          veh            veh              -                
+
+25.16       veh.2          state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+25.16       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+25.23       veh            state_waitForAck              state_changePL                -              -              -              -                -                
+25.23       veh            state_changePL                state_waitForAllAcks2         CHANGE_PL      veh.3          veh            veh              -                
+
+25.31       veh.3          state_platoonFollower         state_platoonFollower         ACK            veh            veh.2          veh              -                
+
+25.36       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+25.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+25.38       veh            state_waitForAllAcks2         state_splitDone               -              -              -              -                -                
+25.38       veh            state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh            veh              -                
+25.38       veh            state_splitDone               state_platoonLeader           SPLIT_DONE     veh.2          veh            veh              -                
+
+25.42       veh.2          state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+26.36       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+26.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+27.36       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+27.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+28.36       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                -                
+
+28.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+28.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+29.22       veh.2          state_waitForGap              state_platoonLeader           GAP_CREATED    veh            veh.2          veh              Split_End        
+
+29.27       veh            state_platoonLeader           state_sendSplitReq            -              -              -              -                -                
+29.27       veh            state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh.1          veh            veh              -                
+
+29.29       veh.2          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+29.29       veh.2          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh            veh.2          veh              Merge_Request    
+
+29.37       veh.1          state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh            veh            veh              -                
+
+29.42       veh            state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+29.42       veh            state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh.1          veh            veh              -                
+
+29.46       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+29.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+29.48       veh.1          state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+29.48       veh.1          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.1          veh.1            -                
+
+29.53       veh            state_waitForAck              state_splitDone               -              -              -              -                -                
+29.53       veh            state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh            veh              -                
+29.53       veh            state_splitDone               state_platoonLeader           SPLIT_DONE     veh.1          veh            veh              -                
+
+29.57       veh.1          state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+30.29       veh.2          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+30.29       veh.2          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh            veh.2          veh              Merge_Request    
+
+30.34       veh            state_platoonLeader           state_platoonLeader           MERGE_REJECT   veh.2          veh            veh.2            -                
+
+30.36       veh.2          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+30.39       veh.2          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+30.39       veh.2          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.1          veh.2          veh.1            Merge_Request    
+
+30.46       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+30.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+31.39       veh.2          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+31.39       veh.2          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.1          veh.2          veh.1            Merge_Request    
+
+31.46       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                -                
+
+31.56       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+31.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+32.39       veh.2          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+32.39       veh.2          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.1          veh.2          veh.1            Merge_Request    
+
+32.56       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+32.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+33.27       veh.1          state_waitForGap              state_platoonLeader           GAP_CREATED    veh            veh.1          veh              Split_End        
+
+33.36       veh.1          state_platoonLeader           state_idle                    -              -              -              -                FLeave_End       
+
+33.39       veh.2          state_waitForMergeReply       state_platoonLeader           -              -              -              -                -                
+
+33.39       veh.2          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+33.39       veh.2          state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+33.46       veh.2          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+33.46       veh.2          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh            veh.2          veh              Merge_Request    
+
+33.47       veh            state_platoonLeader           state_sendMergeAccept         -              -              -              -                -                
+33.47       veh            state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh.2          veh            veh.2            -                
+
+33.52       veh.2          state_waitForMergeReply       state_mergeAccepted           -              -              -              -                Merge_Start      
+33.52       veh.2          state_mergeAccepted           state_waitForCatchup          -              -              -              -                -                
+
+33.56       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+33.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+33.65       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+33.69       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+33.76       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+33.76       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+33.76       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+33.82       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+33.86       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+33.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+33.95       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+34.00       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+34.06       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+34.06       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+34.15       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+34.19       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+34.26       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+34.26       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+34.28       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+34.35       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+34.36       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+34.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+34.44       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+34.44       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+34.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+34.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+34.46       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+34.49       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+34.56       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+34.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+34.63       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+34.65       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+34.66       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+34.66       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+34.73       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+34.79       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+34.86       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+34.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+34.88       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+34.90       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+34.96       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+34.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+34.99       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+35.04       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+35.06       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+35.06       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+35.16       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+36.06       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+36.06       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+36.08       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+36.09       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+36.16       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+36.16       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+36.20       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+36.28       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+36.36       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+36.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+36.44       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+36.51       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+36.56       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+36.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+36.66       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+36.73       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+36.76       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+36.76       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+36.76       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+36.84       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+36.86       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+36.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+36.86       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+36.91       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+36.96       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+36.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+37.01       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+37.04       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+37.06       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+37.06       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+37.15       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+37.21       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+37.26       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+37.26       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+37.29       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+37.33       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+37.36       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+37.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+37.42       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+37.52       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+37.56       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+37.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+37.57       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+37.59       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+37.66       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+37.66       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+37.71       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+37.81       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+37.86       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+37.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+37.86       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+37.89       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+37.96       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+37.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+37.97       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+38.47       veh            state_waitForMergeDone        state_sendMergeAccept         -              -              -              -                -                
+38.47       veh            state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh.2          veh            veh.2            -                
+
+38.96       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+38.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+39.02       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+39.08       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+39.16       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+39.16       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+39.25       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+39.27       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+39.36       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+39.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+39.38       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+39.45       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+39.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+39.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+39.52       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+39.60       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+39.66       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+39.66       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+39.69       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+39.77       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+39.86       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+39.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+39.94       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+39.96       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+40.06       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+40.06       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+40.10       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+40.19       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+40.26       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+40.26       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+40.31       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+40.40       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+40.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+40.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+40.52       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+40.60       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+40.66       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+40.66       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+40.68       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+40.69       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+40.76       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+40.76       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+40.79       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+40.80       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+40.86       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+40.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+40.93       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+40.98       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+41.06       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+41.06       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+41.07       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+41.12       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+41.16       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+41.16       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+41.20       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+41.22       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+41.26       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+41.26       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+41.34       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+41.40       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+41.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+41.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+41.50       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+41.56       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+41.56       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+41.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+41.56       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+41.61       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+41.66       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+41.66       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+41.73       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+41.76       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+41.86       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+41.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+41.95       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+42.02       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+42.06       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+42.06       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+42.13       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+42.20       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+42.26       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+42.26       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+42.29       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+42.32       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+42.36       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+42.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+42.36       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+42.39       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+42.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+42.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+42.46       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+42.54       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+42.56       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+42.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+42.64       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+42.69       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+42.76       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+42.76       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+42.83       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+42.92       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+42.96       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+42.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+43.00       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+43.08       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+43.16       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+43.16       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+43.26       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+43.27       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+43.36       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+43.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+43.41       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+43.44       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+43.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+43.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+43.47       veh            state_waitForMergeDone        state_sendMergeAccept         -              -              -              -                -                
+43.47       veh            state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh.2          veh            veh.2            -                
+
+43.51       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+43.55       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+43.56       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+43.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+43.62       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+43.69       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+43.76       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+43.76       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+43.79       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+43.87       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+43.96       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+43.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+43.97       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+44.07       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+44.16       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+44.16       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+44.16       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+44.24       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+44.26       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+44.26       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+44.32       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+44.41       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+44.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+44.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+44.48       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+44.59       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+44.66       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+44.66       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+44.72       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+44.72       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+44.76       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+44.76       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+44.78       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+44.86       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+44.96       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+44.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+45.00       veh1           state_platoonLeader           state_sendVoteLeader          -              -              -              -                -                
+45.00       veh1           state_sendVoteLeader          state_waitForVoteReply        VOTE_LEADER    multicast      veh1           veh1             LLeave_Start     
+
+45.04       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+45.09       veh1.1         state_platoonFollower         state_platoonFollower         ELECTED_LEADER veh1           veh1           veh1             -                
+
+45.10       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+45.14       veh1           state_waitForVoteReply        state_sendSplitReq            -              -              -              -                -                
+45.14       veh1           state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh1.1         veh1           veh1             -                
+
+45.16       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+45.16       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+45.16       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+45.18       veh1.1         state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh1           veh1           veh1             -                
+
+45.19       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+45.25       veh1           state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+45.25       veh1           state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh1.1         veh1           veh1             -                
+
+45.26       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+45.26       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+45.29       veh1.1         state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+45.29       veh1.1         state_sendingACK              state_waitForSplitDone        ACK            veh1           veh1.1         veh1.1           -                
+
+45.31       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+45.34       veh1           state_waitForAck              state_changePL                -              -              -              -                -                
+45.34       veh1           state_changePL                state_waitForAllAcks2         CHANGE_PL      veh1.2         veh1           veh1             -                
+45.34       veh1           state_changePL                state_waitForAllAcks2         CHANGE_PL      veh1.3         veh1           veh1             -                
+
+45.40       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+45.41       veh1.3         state_platoonFollower         state_platoonFollower         ACK            veh1           veh1.1         veh1             -                
+
+45.43       veh1.2         state_platoonFollower         state_platoonFollower         ACK            veh1           veh1.1         veh1             -                
+
+45.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+45.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+45.47       veh1.4         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+45.47       veh1.4         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.1         veh1.4         veh1.1           Merge_Request    
+
+45.50       veh1           state_waitForAllAcks2         state_splitDone               -              -              -              -                -                
+45.50       veh1           state_splitDone               state_splitCompleted          CHANGE_Tg      multicast      veh1           veh1             -                
+45.50       veh1           state_splitDone               state_splitCompleted          SPLIT_DONE     veh1.1         veh1           veh1             -                
+
+45.53       veh1.1         state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+45.55       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+45.57       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+45.66       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+45.66       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+45.71       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+45.72       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+45.76       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+45.76       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+45.76       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+45.83       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+45.86       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+45.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+45.88       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+45.96       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+45.96       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+45.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+46.04       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+46.07       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+46.16       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+46.16       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+46.23       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+46.27       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+46.36       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+46.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+46.40       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+46.47       veh1.4         state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+46.47       veh1.4         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.1         veh1.4         veh1.1           Merge_Request    
+
+46.48       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+46.56       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+46.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+46.59       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+46.68       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+46.76       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+46.76       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+46.77       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+46.86       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+46.96       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+46.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+47.02       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+47.04       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+47.06       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+47.06       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+47.13       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+47.17       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+47.26       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+47.26       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+47.35       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+47.43       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+47.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+47.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+47.47       veh1.4         state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+47.47       veh1.4         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.1         veh1.4         veh1.1           Merge_Request    
+
+47.54       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+47.56       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+47.66       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+47.66       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+47.73       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+47.83       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+47.86       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+47.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+47.86       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+47.92       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+47.96       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+47.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+48.05       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+48.15       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+48.16       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+48.16       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+48.16       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+48.18       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+48.26       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+48.26       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+48.35       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+48.42       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+48.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+48.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+48.47       veh            state_waitForMergeDone        state_sendMergeAccept         -              -              -              -                -                
+48.47       veh            state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh.2          veh            veh.2            -                
+
+48.47       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+48.47       veh1.4         state_waitForMergeReply       state_platoonLeader           -              -              -              -                -                
+
+48.47       veh1.4         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+48.47       veh1.4         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.1         veh1.4         veh1.1           Merge_Request    
+
+48.54       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+48.56       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+48.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+48.61       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+48.62       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+48.66       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+48.66       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+48.67       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+48.74       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+48.76       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+48.76       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+48.76       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+48.83       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+48.86       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+48.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+48.86       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+48.88       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+48.96       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+48.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+48.99       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+49.00       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+49.06       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+49.06       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+49.08       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+49.17       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+49.23       veh1.1         state_waitForGap              state_platoonLeader           GAP_CREATED    veh1           veh1.1         veh1             Split_End        
+
+49.26       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+49.26       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+49.26       veh1           state_splitCompleted          state_idle                    -              -              -              -                LLeave_End       
+
+49.28       veh1.1         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+49.28       veh1.1         state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+49.35       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+49.38       veh1.1         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+49.38       veh1.1         state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+49.44       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+49.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+49.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+49.47       veh1.4         state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+49.47       veh1.4         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1.1         veh1.4         veh1.1           Merge_Request    
+
+49.48       veh1.1         state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+49.48       veh1.1         state_sendMergeReq            state_platoonLeader           -              -              -              -                -                
+
+49.52       veh1.1         state_platoonLeader           state_sendMergeAccept         -              -              -              -                -                
+49.52       veh1.1         state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh1.4         veh1.1         veh1.4           -                
+
+49.54       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+49.54       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+49.56       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+49.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+49.60       veh1.4         state_waitForMergeReply       state_mergeAccepted           -              -              -              -                Merge_Start      
+49.60       veh1.4         state_mergeAccepted           state_waitForCatchup          -              -              -              -                -                
+
+49.64       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+49.69       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+49.76       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+49.76       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+49.82       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+49.90       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+49.96       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+49.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+49.96       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+50.01       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+50.06       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+50.06       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+50.11       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+50.12       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+50.16       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+50.16       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+50.21       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+50.25       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+50.26       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+50.26       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+50.26       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+50.28       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+50.36       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+50.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+50.42       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+50.43       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+50.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+50.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+50.55       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+50.65       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+50.66       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+50.66       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+50.70       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+50.75       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+50.76       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+50.76       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+50.78       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+50.88       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+50.96       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+50.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+51.00       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+51.08       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+51.16       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+51.16       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+51.19       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+51.24       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+51.26       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+51.26       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+51.31       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+51.35       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+51.36       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+51.36       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+51.37       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+51.46       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+51.56       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+51.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+51.64       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+51.64       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+51.66       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+51.66       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+51.70       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+51.70       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+51.76       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+51.76       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+51.85       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+51.91       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+51.96       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+51.96       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+52.00       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+52.01       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+52.06       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+52.06       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+52.15       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+52.24       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+52.26       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+52.26       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+52.34       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+52.40       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+52.46       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+52.46       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+52.51       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+52.52       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+52.56       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+52.56       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+52.56       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+52.60       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+52.66       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+52.66       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+52.73       veh.2          state_waitForCatchup          state_waitForCatchup          MERGE_REJECT   veh.4          veh.2          veh.4            -                
+
+52.79       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                Merge_Reject     
+
+52.82       veh.2          state_waitForCatchup          state_notifyFollowers         -              -              -              -                -                
+52.82       veh.2          state_notifyFollowers         state_waitForAllAcks          CHANGE_PL      multicast      veh.2          veh              -                
+
+52.86       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+52.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+52.87       veh.3          state_platoonFollower         state_platoonFollower         ACK            veh.2          veh            veh.2            -                
+
+52.92       veh.2          state_waitForAllAcks          state_sendMergeDone           -              -              -              -                -                
+52.92       veh.2          state_sendMergeDone           state_platoonFollower         MERGE_DONE     veh            veh            veh              Merge_End        
+
+53.02       veh            state_waitForMergeDone        state_mergeDone               -              -              -              -                -                
+53.02       veh            state_mergeDone               state_platoonLeader           -              -              -              -                -                
+
+53.60       veh1.4         state_waitForCatchup          state_sendMergeDone           -              -              -              -                -                
+53.60       veh1.4         state_sendMergeDone           state_platoonFollower         MERGE_DONE     veh1.1         veh1.1         veh1.1           Merge_End        
+
+53.69       veh1.1         state_waitForMergeDone        state_mergeDone               -              -              -              -                -                
+53.69       veh1.1         state_mergeDone               state_platoonLeader           -              -              -              -                -                
+
+53.86       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+53.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+54.86       veh.4          state_waitForMergeReply       state_sendMergeReq            -              -              -              -                -                
+54.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh.2          veh.4          veh.2            Merge_Request    
+
+55.86       veh.4          state_waitForMergeReply       state_platoonLeader           -              -              -              -                -                
+
+55.86       veh.4          state_platoonLeader           state_sendMergeReq            -              -              -              -                -                
+55.86       veh.4          state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh            veh.4          veh              Merge_Request    
+
+55.94       veh            state_platoonLeader           state_sendMergeAccept         -              -              -              -                -                
+55.94       veh            state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh.4          veh            veh.4            -                
+
+55.97       veh.4          state_waitForMergeReply       state_mergeAccepted           -              -              -              -                Merge_Start      
+55.97       veh.4          state_mergeAccepted           state_waitForCatchup          -              -              -              -                -                
+
+60.94       veh            state_waitForMergeDone        state_sendMergeAccept         -              -              -              -                -                
+60.94       veh            state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh.4          veh            veh.4            -                
+
+65.94       veh            state_waitForMergeDone        state_sendMergeAccept         -              -              -              -                -                
+65.94       veh            state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh.4          veh            veh.4            -                
+
+68.27       veh.4          state_waitForCatchup          state_sendMergeDone           -              -              -              -                -                
+68.27       veh.4          state_sendMergeDone           state_platoonFollower         MERGE_DONE     veh            veh            veh              Merge_End        
+
+68.35       veh            state_waitForMergeDone        state_mergeDone               -              -              -              -                -                
+68.35       veh            state_mergeDone               state_platoonLeader           -              -              -              -                -                
