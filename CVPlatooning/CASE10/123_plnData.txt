@@ -1,0 +1,378 @@
+configName      CASE123
+iniFile         omnet_CASE10.ini
+processID       16856
+runID           CASE123-0-20220322-18:10:24-16856
+totalRun        1
+currentRun      0
+currentConfig   CASE123
+sim timeStep    100 ms
+startDateTime   2022-03-22 18:10:24.943
+endDateTime     2022-03-22 18:10:37.943
+duration        0 hour, 0 minute, 12 second
+
+
+timeStep    vehId          fromState                     toState                       commandSent    receiverId     senderPltId    receiverPltId    maneuverStartEnd 
+
+
+0.00        veh            state_idle                    state_platoonLeader           -              -              -              -                -                
+
+0.00        veh.1          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh.2          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh.3          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh.4          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh.5          state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1           state_idle                    state_platoonLeader           -              -              -              -                -                
+
+0.00        veh1.1         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.2         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.3         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.4         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh1.5         state_idle                    state_platoonFollower         -              -              -              -                -                
+
+0.00        veh            state_platoonLeader           state_sendSplitReq            -              -              -              -                -                
+0.00        veh            state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh.4          veh            veh              -                
+
+0.00        veh1           state_platoonLeader           state_sendSplitReq            -              -              -              -                -                
+0.00        veh1           state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh1.4         veh1           veh1             -                
+
+0.02        veh.4          state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh            veh            veh              -                
+
+0.06        veh1.4         state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh1           veh1           veh1             -                
+
+0.07        veh            state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+0.07        veh            state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh.4          veh            veh              -                
+
+0.12        veh1           state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+0.12        veh1           state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh1.4         veh1           veh1             -                
+
+0.15        veh.4          state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+0.15        veh.4          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.4          veh.4            -                
+
+0.20        veh1.4         state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+0.20        veh1.4         state_sendingACK              state_waitForSplitDone        ACK            veh1           veh1.4         veh1.4           -                
+
+0.23        veh            state_waitForAck              state_changePL                -              -              -              -                -                
+0.23        veh            state_changePL                state_waitForAllAcks2         CHANGE_PL      veh.5          veh            veh              -                
+
+0.26        veh1           state_waitForAck              state_changePL                -              -              -              -                -                
+0.26        veh1           state_changePL                state_waitForAllAcks2         CHANGE_PL      veh1.5         veh1           veh1             -                
+
+0.29        veh1.5         state_platoonFollower         state_platoonFollower         ACK            veh1           veh1.4         veh1             -                
+
+0.30        veh.5          state_platoonFollower         state_platoonFollower         ACK            veh            veh.4          veh              -                
+
+0.36        veh1           state_waitForAllAcks2         state_splitDone               -              -              -              -                -                
+0.36        veh1           state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh1           veh1             -                
+0.36        veh1           state_splitDone               state_platoonLeader           SPLIT_DONE     veh1.4         veh1           veh1             -                
+
+0.40        veh            state_waitForAllAcks2         state_splitDone               -              -              -              -                -                
+0.40        veh            state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh            veh              -                
+0.40        veh            state_splitDone               state_platoonLeader           SPLIT_DONE     veh.4          veh            veh              -                
+
+0.41        veh1.4         state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+0.41        veh.4          state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+0.81        veh1.4         state_waitForGap              state_platoonLeader           GAP_CREATED    veh1           veh1.4         veh1             Split_End        
+
+0.81        veh.4          state_waitForGap              state_platoonLeader           GAP_CREATED    veh            veh.4          veh              Split_End        
+
+25.00       veh.1          state_platoonFollower         state_sendLeaveReq            -              -              -              -                -                
+25.00       veh.1          state_sendLeaveReq            state_waitForLeaveReply       LEAVE_REQ      veh            veh            veh              FLeave_Request   
+
+25.01       veh            state_platoonLeader           state_sendSplitReq            LEAVE_ACCEPT   veh.1          veh            veh              -                
+25.01       veh            state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh.2          veh            veh              -                
+
+25.02       veh.2          state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh            veh            veh              -                
+
+25.06       veh.1          state_waitForLeaveReply       state_platoonFollower         -              -              -              -                MFLeave_Start    
+
+25.09       veh            state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+25.09       veh            state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh.2          veh            veh              -                
+
+25.15       veh.2          state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+25.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+25.19       veh            state_waitForAck              state_changePL                -              -              -              -                -                
+25.19       veh            state_changePL                state_waitForAllAcks2         CHANGE_PL      veh.3          veh            veh              -                
+
+25.27       veh.3          state_platoonFollower         state_platoonFollower         ACK            veh            veh.2          veh              -                
+
+25.28       veh            state_waitForAllAcks2         state_splitDone               -              -              -              -                -                
+25.28       veh            state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh            veh              -                
+25.28       veh            state_splitDone               state_platoonLeader           SPLIT_DONE     veh.2          veh            veh              -                
+
+26.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+26.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+27.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+27.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+28.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+28.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+29.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+29.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+30.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+30.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+31.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+31.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+32.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+32.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+33.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+33.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+34.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+34.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+35.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+35.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+36.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+36.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+37.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+37.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+38.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+38.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+39.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+39.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+40.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+40.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+41.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+41.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+42.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+42.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+43.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+43.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+44.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+44.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+45.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+45.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+46.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+46.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+47.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+47.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+48.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+48.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+49.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+49.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+50.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+50.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+51.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+51.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+52.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+52.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+53.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+53.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+54.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+54.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+55.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+55.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+56.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+56.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+57.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+57.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+58.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+58.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+59.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+59.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+60.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+60.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+61.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+61.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+62.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+62.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+63.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+63.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+64.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+64.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+65.00       veh1.4         state_platoonLeader           state_waitForBeacon           -              -              -              -                -                
+
+65.09       veh1.4         state_waitForBeacon           state_sendMergeReq            -              -              -              -                -                
+65.09       veh1.4         state_sendMergeReq            state_waitForMergeReply       MERGE_REQ      veh1           veh1.4         veh1             Merge_Request    
+
+65.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+65.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+65.19       veh1           state_platoonLeader           state_sendMergeAccept         -              -              -              -                -                
+65.19       veh1           state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh1.4         veh1           veh1.4           -                
+
+65.28       veh1.4         state_waitForMergeReply       state_mergeAccepted           -              -              -              -                Merge_Start      
+65.28       veh1.4         state_mergeAccepted           state_waitForCatchup          -              -              -              -                -                
+
+66.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+66.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+67.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+67.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+68.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+68.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+69.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+69.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+70.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+70.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+70.19       veh1           state_waitForMergeDone        state_sendMergeAccept         -              -              -              -                -                
+70.19       veh1           state_sendMergeAccept         state_waitForMergeDone        MERGE_ACCEPT   veh1.4         veh1           veh1.4           -                
+
+71.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+71.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+72.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+72.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+73.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+73.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+73.78       veh1.4         state_waitForCatchup          state_notifyFollowers         -              -              -              -                -                
+73.78       veh1.4         state_notifyFollowers         state_waitForAllAcks          CHANGE_PL      multicast      veh1.4         veh1             -                
+
+73.80       veh1.5         state_platoonFollower         state_platoonFollower         ACK            veh1.4         veh1           veh1.4           -                
+
+73.87       veh1.4         state_waitForAllAcks          state_sendMergeDone           -              -              -              -                -                
+73.87       veh1.4         state_sendMergeDone           state_platoonFollower         MERGE_DONE     veh1           veh1           veh1             Merge_End        
+
+73.89       veh1           state_waitForMergeDone        state_mergeDone               -              -              -              -                -                
+73.89       veh1           state_mergeDone               state_platoonLeader           CHANGE_Tg      multicast      veh1           veh1             -                
+
+74.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+74.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+75.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+75.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+76.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+76.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+77.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+77.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+78.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+78.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+79.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+79.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+80.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+80.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+81.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+81.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+82.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+82.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+83.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+83.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+84.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+84.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+85.00       veh.4          state_platoonLeader           state_sendSplitReq            -              -              -              -                -                
+85.00       veh.4          state_sendSplitReq            state_waitForSplitReply       SPLIT_REQ      veh.5          veh.4          veh.4            -                
+
+85.05       veh.5          state_platoonFollower         state_waitForCHANGEPL         SPLIT_ACCEPT   veh.4          veh.4          veh.4            -                
+
+85.12       veh.4          state_waitForSplitReply       state_makeItFreeAgent         -              -              -              -                Split_Start      
+85.12       veh.4          state_makeItFreeAgent         state_waitForAck              CHANGE_PL      veh.5          veh.4          veh.4            -                
+
+85.14       veh.5          state_waitForCHANGEPL         state_sendingACK              -              -              -              -                -                
+85.14       veh.5          state_sendingACK              state_waitForSplitDone        ACK            veh.4          veh.5          veh.5            -                
+
+85.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+85.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+85.16       veh.4          state_waitForAck              state_splitDone               -              -              -              -                -                
+85.16       veh.4          state_splitDone               state_platoonLeader           CHANGE_Tg      multicast      veh.4          veh.4            -                
+85.16       veh.4          state_splitDone               state_platoonLeader           SPLIT_DONE     veh.5          veh.4          veh.4            -                
+
+85.20       veh.5          state_waitForSplitDone        state_waitForGap              -              -              -              -                -                
+
+86.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+86.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+87.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+87.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+88.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+88.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+88.90       veh.5          state_waitForGap              state_platoonLeader           GAP_CREATED    veh.4          veh.5          veh.4            Split_End        
+
+89.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+89.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+90.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+90.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+91.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+91.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+92.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+92.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+93.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+93.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+94.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+94.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+95.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+95.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+96.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+96.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+97.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+97.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+98.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+98.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
+
+99.15       veh.2          state_waitForSplitDone        state_sendingACK              -              -              -              -                -                
+99.15       veh.2          state_sendingACK              state_waitForSplitDone        ACK            veh            veh.2          veh.2            -                
