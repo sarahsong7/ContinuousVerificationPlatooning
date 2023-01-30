@@ -1,0 +1,73 @@
+dtmc
+
+const double av1;
+const double ve1=0.5;
+const double av2=0.5;
+const double ve2=0.5;
+const double av3=0.5;
+const double ve3=0.5;
+const double av21=0.5;
+const double ve21=0.5;
+
+module Peer1
+	isListed1: bool init true;
+	status1: [0..5] init 0;
+//  0:none, 1:started, 2:available, 3:unavailable, 4:sucess, 5:failure
+	remainBit1: [0..10] init 10;
+
+	[C1request] isListed1 -> (status1'=1) & (isListed1'=false);
+	[] status1 = 1 -> av1: (status1'=2) + 1-av1: (status1'=3);
+	[C1trans] status1 = 2 & remainBit1 > 0 -> ve1: (remainBit1'=remainBit1-1) + 1-ve1: true;
+	[C1done] status1 = 2 & remainBit1 = 0 -> (status1'=4);
+	[C1X] status1 = 3 -> (status1'=5);
+	[] status1 = 0 -> true;
+endmodule
+
+module Peer2 = Peer1[C1request=C2request, C1trans=C2trans, C1done=C2done, C1X=C2X, isListed1=isListed2, av1=av2, ve1=ve2, status1=status2, remainBit1=remainBit2] endmodule
+module Peer3 = Peer1[C1request=C3request, C1trans=C3trans, C1done=C3done, C1X=C3X, isListed1=isListed3, av1=av3, ve1=ve3, status1=status3, remainBit1=remainBit3] endmodule
+
+module Peer21
+	isListed21: bool init false;
+	status21: [0..5] init 0;
+//  0:none, 1:started, 2:available, 3:unavailable, 4:sucess, 5:failure
+	remainBit21: [0..10] init 10;
+
+	[C21request] isListed21 -> (status21'=1) & (isListed21'=false);
+	[] status21 = 1 -> av21: (status21'=2) + 1-av21: (status21'=3);
+	[C21trans] status21 = 2 & remainBit21 > 0 -> ve21: (remainBit21'=remainBit21-1) + 1-ve21: true;
+	[C21done] status21 = 2 & remainBit21 = 0 -> (status21'=4);
+	[C21X] status21 = 3 -> (status21'=5);
+	[] status21 =5 -> true;
+endmodule
+
+module Peer22 = Peer21[C21request=C22request, C21trans=C22trans, C21done=C22done, C21X=C22X, isListed21=isListed22, status21=status22, remainBit21=remainBit22] endmodule
+
+module Client
+	C1stat: [1..4] init 1;
+//  0: none, 1:start, 2:transmit, 3:sucess, 4:fail
+	C2stat: [1..4] init 1;
+	C3stat: [1..4] init 1;
+	C4stat: [1..4] init 1;
+	C5stat: [1..4] init 1;
+
+	transmissionT1: [0..3] init 0;
+	transmissionT2: [0..3] init 0;
+	transmissionT3: [0..3] init 0;
+	transmissionT4: [0..3] init 0;
+	transmissionT5: [0..3] init 0;
+	
+	[C1request] C1stat=1 -> (C1stat'=2);
+	[C1trans] transmissionT1<3 -> (transmissionT1'=transmissionT1+1);
+	[C1done] C1stat=2 -> (C1stat'=3);
+	[C1X] C1stat=3 -> (C1stat'=4);
+	
+	[C2request] C2stat=1 -> (C2stat'=2);
+	[C2trans] transmissionT2<3 -> (transmissionT2'=transmissionT2+1);
+	[C2done] true -> (C2stat'=3);
+	[C2X] true -> (C2stat'=4);
+
+	[C3request] C3stat=1 -> (C3stat'=2);
+	[C3trans] transmissionT3<3 -> (transmissionT3'=transmissionT3+1);
+	[C3done] true -> (C3stat'=3);
+	[C3X] true -> (C3stat'=4);
+endmodule
